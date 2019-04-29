@@ -46,7 +46,8 @@ def main(arg,liste_themes):
 
         
     if arg == '-ls':
-        for i,e in enumerate(liste_themes): 
+        for i,e in enumerate(liste_themes):
+            e=e.rstrip('\n')
             print(i+1,e)
 
 detect()
