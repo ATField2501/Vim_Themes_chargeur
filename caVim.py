@@ -40,7 +40,7 @@ def main(arg,liste_themes):
                 print(e)
 
     if arg == '-h':
-        print("Appel de vim en transformant le thème")
+        print("* Transformant le thème de vim *")
         print("caVim -ls        - Affiche les thèmes présent")
         print("caVim -1         - Chargant le premier thème")
 
