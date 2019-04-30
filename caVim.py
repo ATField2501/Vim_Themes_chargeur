@@ -35,19 +35,30 @@ def main(arg,liste_themes):
                 e=e.rstrip('\n')
                 os.system("ln -s "+chemin_vers_themes+str(e)+" "+chemin_vers_config)  
                 print("Thème Vim changé pour {}".format(e))
+                with open('.tmp_caglio', 'w') as f:
+                    try:
+                        f.write(e)
+                    except Exception as eee:
+                        print(eee)
             except Exception as e:
                 print(e)
 
     if arg == '-h':
-        print("* Transformant le thème de vim *")
+        print("*      Chargeur de thèmes  vim     *")
         print("caVim -ls        - Affiche les thèmes présent")
-        print("caVim -1         - Chargant le premier thème")
-
+        print("caVim -1         - Charge le premier thème")
+        print("caVim -?         - Affiche le thème chargé")
+        
         
     if arg == '-ls':
         for i,e in enumerate(liste_themes):
             e=e.rstrip('\n')
             print(i+1,e)
+
+    if arg == '-?':
+        with open(".tmp_caglio","r") as f:
+            for line in f.readlines():
+                print(line)
 
 detect()
 
