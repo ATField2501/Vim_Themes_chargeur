@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# _*_ conding: utf8
+# -*- coding:utf8
 #auteur:cagliostro <atfield2501@gmail.com
 
 #### Script transformant le fichier de config de vim au niveau utilisateur pour changer de thème à la volée
@@ -33,8 +33,7 @@ def main(arg,liste_themes):
             try:
                 os.system('rm '+chemin_vers_config)
                 e=e.rstrip('\n')
-                commandefinal="ln -s ~/Documents/Vim-Themes/"+str(e)+" ~/.vim/colors/caglioProfil.vim"  
-                os.system(commandefinal)
+                os.system("ln -s "+chemin_vers_themes+str(e)+" "+chemin_vers_config)  
                 print("Thème Vim changé pour {}".format(e))
             except Exception as e:
                 print(e)
